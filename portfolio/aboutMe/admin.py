@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import SingletonModel,AboutMe
 
-# Register your models here.
+admin.site.register(SingletonModel)
+admin.site.register(AboutMe)
