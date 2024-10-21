@@ -14,7 +14,7 @@ class AboutMe(SingletonModel):
     photo = models.ImageField(upload_to='images/')
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=250)
-    phone_number = PhoneNumberField(blank=True)
+    phone_number = PhoneNumberField()
     email_address = models.EmailField()
     github = models.CharField(max_length=250)
     linkedIn = models.CharField(max_length=250)
