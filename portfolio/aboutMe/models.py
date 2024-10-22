@@ -11,10 +11,10 @@ class SingletonModel(models.Model):
 
 
 class AboutMe(SingletonModel):
-    photo = models.ImageField(upload_to='images/')
+    photo = models.ImageField(upload_to='media/')
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=250)
-    phone_number = PhoneNumberField()
+    phone_number = models.CharField(max_length=50,default=None)
     email_address = models.EmailField()
     github = models.CharField(max_length=250)
     linkedIn = models.CharField(max_length=250)
