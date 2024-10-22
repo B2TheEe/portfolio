@@ -1,26 +1,27 @@
 
 {% include "header.html" %}
+{% load static %}
 <body>
 <section id="aboutMe">
     <header>
         <h1>About me</h1>
     </header>
     <article>
-        <img src="{{ about_me.photo }}" width="150" height="150">
-        <img src="nogerbijdoen">
-        <img src="lololol">
+         <p>
+        {{ about_me.name }}
+       <img src="> {{ about_me.photo }}" width="250" height="250">
+        </p>
     </article>
     <article>
-        {{ test }} {{ name }}
-        {{ about_me }}
-        {{ about_me.name }}
-        {{ about_me.photo }}
-        {{ about_me.address }}
-        {{ about_me.phone_number }}
-        {{ about_me.email_address }}
-        {{  about_me.github }}
-        {{ about_me.linkedIn }}
-        {{ about_me.about_me }}
+
+        <p>  {{ about_me.about_me }}</p>
+        <p>
+            <a href="https://www.google.com/maps/place/{{ about_me.address }}"><img src="{% static 'img/location.png' %}'" width="50px" height="50px"></a>
+           <a href="tel:{{ about_me.phone_number }}"> <img src="{% static '/img/phone.png' %}" width="50px" height="50px"></a>
+            <a href= "mailto:{{ about_me.email_address }}"> <img src="{% static  'img/email.png' %}" width="50px" height="50px"> </a>
+            <a href="{{  about_me.github }}"><img src="{% static 'img/github.png' %}" width="50px" height="50px"></a>
+            <a href=" {{ about_me.linkedIn }}"><img src="{% static 'img/linkedin.png' %}" width="50px" height="50px"></a>
+          </p>
     </article>
 </section>
 
