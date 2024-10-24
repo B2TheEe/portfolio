@@ -1,0 +1,24 @@
+{% include "header.html" %}
+{% load static %}
+<body>
+<section id="worke">
+{% for x in workexperiences %}
+    <section>
+        <section>
+            <img src="{{ x.photo }}">
+        </section>
+        <section>
+            <h2>{{ x.name }}</h2>
+
+            <h4>{{ x.from_date }} - {{ x.to_date }}</h4>
+            <h2> {{ x.company }}</h2>
+             <h3>{{ x.description }}</h3>
+            </section>
+        
+        </section>
+{% endfor %}
+
+
+    </section>
+</body>
+</html>
