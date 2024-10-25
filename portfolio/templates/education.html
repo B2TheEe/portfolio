@@ -1,0 +1,30 @@
+{% include "header.html" %}
+{% load static %}
+<body>
+<section id="worke">
+{% for x in ducationexperiences %}
+    <section>
+        <section>
+            <img src="{{ x.photo }}">
+        </section>
+        <section>
+            <h2>{{ x.name }}</h2>
+
+            <h4>{{ x.from_date }} - {{ x.to_date }}</h4>
+            <h2> {{ x.company }}</h2>
+             <h3>{{ x.description }}</h3>
+        {% if x.Propaedeutic_exam_date is not null%}
+            <h3>Propaedeutic_exam:  {{ x.Propaedeutic_exam_date }}</h3>
+            {% endif %}
+            {% if x.degree_date  is not null %}
+
+            <h3> Degree: {{ x.degree_date }} </h3>
+            {% endif %}
+        
+        </section>
+{% endfor %}
+
+
+    </section>
+</body>
+</html>
