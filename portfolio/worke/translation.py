@@ -3,4 +3,4 @@ from .models import WorkExperience
 
 @register(WorkExperience)
 class WorkExperienceTranslationOptions(TranslationOptions):
-    fields = ('company', 'name', 'description')
+    fields = ( 'description',)
