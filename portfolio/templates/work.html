@@ -1,5 +1,6 @@
 {% include "header.html" %}
 {% load static %}
+{% load i18n %}
 <body>
 <section id="worke">
 {% for x in workexperiences %}
@@ -8,11 +9,11 @@
             <img src="{{ x.photo }}">
         </section>
         <section>
-            <h2>{{ x.name }}</h2>
+            <h2>{% translate x.name %}</h2>
+             <h4> {{ x.from_date }} - {{ x.to_date }}</h4>
 
-            <h4>{{ x.from_date }} - {{ x.to_date }}</h4>
-            <h2> {{ x.company }}</h2>
-             <h3>{{ x.description }}</h3>
+            <h2>{% translate x.company  %}</h2>
+             <h3>{% translate  x.description %}</h3>
             </section>
         
         </section>

@@ -2,6 +2,8 @@ from importlib.metadata import requires
 
 from django.db import models
 
+
+
 # Create your models here.
 class WorkExperience(models.Model):
     photo = models.ImageField(upload_to='media/')
