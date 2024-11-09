@@ -24,9 +24,22 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("aboutMe.urls")),
-    path("work", include("worke.urls")),
-    path("education",include("educatione.urls"))
+    path('', include(('aboutMe.urls', 'aboutMe'), namespace='aboutMe')),
+    #path("", include("aboutMe.urls")),
+    #path("work", include("worke.urls", 'work'),namespace="work"),
+    path('work', include(('worke.urls', 'work'), namespace='work')),
+    #path("education", include("educatione.urls")),
+    path("education", include(('"education.urls', 'education'), namespace='"education')),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+i18n_patterns = [
+    #path("nl/overmij", include('aboutMe.urls',namespace='aboutMe')),
+    #path('nl/vaardigheden', include('skills.urls', namespace='skills')),
+    path('nl/werk', include('worke.urls')),
+   # path('nl/portfolio', include('aportfolio.urls', namespace='portfolio')),
+    path('nl/admin', admin.site.urls),
+]
+urlpatterns += i18n_patterns
