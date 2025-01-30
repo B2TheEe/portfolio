@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class WorkeConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'worke'
+    name = 'app_worke'
