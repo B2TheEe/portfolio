@@ -1,7 +1,6 @@
 from django.apps import AppConfig
-from django.utils.translation import gettext_lazy as _
+
 
 class AboutmeConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'app_aboutMe'
-    verbose_name = _('app_aboutMe')
