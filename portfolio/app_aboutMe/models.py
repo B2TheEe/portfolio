@@ -1,6 +1,6 @@
 from django.db import models
 from phonenumber_field.formfields import PhoneNumberField
-
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 class SingletonModel(models.Model):
@@ -15,7 +15,10 @@ class AboutMe(SingletonModel):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=250)
     phone_number = models.CharField(max_length=50,default=None)
-    email_address = models.EmailField()
+    email_address = models.EmailField(_())
     github = models.CharField(max_length=250)
     linkedIn = models.CharField(max_length=250)
-    about_me = models.TextField(max_length=1500)
+    about_me = models.TextField(_(max_length=1500))
+
+    def __str__(self):
+        return self.name
