@@ -42,7 +42,7 @@ i18n_patterns = [
     #path('nl/vaardigheden', include('app_skills.urls', namespace='app_skills')),
     path('nl/werk', include('app_worke.urls')),
    # path('nl/portfolio', include('aportfolio.urls', namespace='portfolio')),
-    path('nl/admin', admin.site.urls),
+   # path('nl/admin', admin.site.urls),
 ]
 urlpatterns += i18n_patterns
 
