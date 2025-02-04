@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rosetta',
+    'parler',
     "app_aboutMe",
     "app_worke",
     "app_educatione",
@@ -126,7 +127,16 @@ USE_TZ = True
 LOCALE_PATHS = [
     BASE_DIR / 'locale/',
 ]
-
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en',}, # English
+        {'code': 'nl',}, # French
+    ),
+    'default': {
+        'fallbacks': ['en'],
+        'hide_untranslated': False,
+    }
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/

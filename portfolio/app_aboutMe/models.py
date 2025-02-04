@@ -1,6 +1,7 @@
 from django.db import models
 from phonenumber_field.formfields import PhoneNumberField
 from django.utils.translation import gettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 # Create your models here.
 class SingletonModel(models.Model):

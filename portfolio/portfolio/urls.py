@@ -16,11 +16,13 @@ Including another URLconf
 """
 from xml.etree.ElementInclude import include
 
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,13 +40,15 @@ urlpatterns = [
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-i18n_patterns = [
-    #path("nl/overmij", include('app_aboutMe.urls',namespace='app_aboutMe')),
-    #path('nl/vaardigheden', include('app_skills.urls', namespace='app_skills')),
+urlpatterns = i18n_patterns(
+    path(_('admin/'), admin.site.urls),
+    path('rosetta/', include('rosetta.urls')),
+    path("nl/overmij", include('app_aboutMe.urls',namespace='app_aboutMe')),
+    path('nl/vaardigheden', include('app_skills.urls', namespace='app_skills')),
     path('nl/werk', include('app_worke.urls')),
-   # path('nl/portfolio', include('aportfolio.urls', namespace='portfolio')),
-   # path('nl/admin', admin.site.urls),
-]
+     path('nl/portfolio', include('aportfolio.urls', namespace='portfolio')),
+)
+
 urlpatterns += i18n_patterns
 
 #
