@@ -24,6 +24,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('rosetta/', include('rosetta.urls')),
     path('', include(('app_aboutMe.urls', 'app_aboutMe'), namespace='app_aboutMe')),
     #path("", include("app_aboutMe.urls")),
     #path("work", include("app_worke.urls", 'work'),namespace="work"),
