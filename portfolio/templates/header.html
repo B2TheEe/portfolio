@@ -10,9 +10,9 @@
 <body>
 <header>
 
-    <a href="{% url 'app_aboutMe:index' %}"">{% trans Home %}</a>
+    <a href="{% url 'app_aboutMe:index' %}">{% trans Home %}</a>
     <a href="{% url 'app_worke:index'%}"> {% trans Workexperience %}</a>
-    <a href="{% url 'app_educatione:index' %}">{% trans Education %}/a>
+    <a href="{% url 'app_educatione:index' %}">{% trans Education %}</a>
 
       {% get_current_language as CURRENT_LANGUAGE %}
       {% get_available_languages as AVAILABLE_LANGUAGES %}
