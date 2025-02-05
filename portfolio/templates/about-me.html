@@ -15,7 +15,6 @@
     <article>
 
         <p>  {{ about_me.about_me }}</p>
-        <p>
             <a href="https://www.google.com/maps/place/{{ about_me.address }}"><img src="{% static 'img/location.png' %}'" width="50px" height="50px"></a>
            <a href="tel:{{ about_me.phone_number }}"> <img src="{% static '/img/phone.png' %}" width="50px" height="50px"></a>
             <a href= "mailto:{{ about_me.email_address }}"> <img src="{% static  'img/email.png' %}" width="50px" height="50px"> </a>
