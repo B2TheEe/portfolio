@@ -12,9 +12,9 @@
 
     <a href="{% url 'app_aboutMe:index' %}"">{% trans Home %}</a>
     <a href="{% url 'app_worke:index'%}"> {% trans Workexperience %}</a>
-    <a href="{% url 'app_educatione:index' %}">{% trans Education< %}/a>
-    <a href="{% url  'app_skills:index' "> {% trans Skills %}</a>
-    <a href="{% url 'app_portfolio:index' "> {% trans Portfolio %}</a>
+    <a href="{% url 'app_educatione:index' %}">{% trans Education %}/a>
+    <!--<a href="{% url  'app_skills:index' %}"> {% trans Skills %}</a>--->
+    <a href="{% url 'app_portfolio:index' %}"> {% trans Portfolio %}</a>
     <form action="{% url 'set_language' %}" method="post" class="form-inline col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
         {% csrf_token %}
         <input name="next" type="hidden" value="{{ redirect_to }}">
