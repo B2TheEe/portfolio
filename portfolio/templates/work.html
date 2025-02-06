@@ -6,13 +6,11 @@
 {% for x in workexperiences %}
     <section>
         <section>
-            <img src="{{ x.photo }}">
+            <img src="{{ x.photo.url }}">
         </section>
         <section>
-            <h2>{% trans x.name noop %}</h2>
+            <h2>{% trans x.name noop %}</h2><h2>{% trans x.company noop %}</h2>
              <h4> {{ x.from_date }} - {{ x.to_date }}</h4>
-
-            <h2>{% trans x.company noop %}</h2>
              <h3>{% trans x.description noop%}</h3>
             </section>
         
