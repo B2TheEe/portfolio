@@ -13,3 +13,6 @@ class EducationExperience(models.Model):
     Propaedeutic_exam_date = models.DateField(default=None,blank=True,null=True )
     degree_date = models.DateField(default=None,blank=True,null=True )
 
+    def __str__(self):
+        return self.name + "\t" + self.company
+
