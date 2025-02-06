@@ -1,5 +1,4 @@
 from django.db import models
-from phonenumber_field.formfields import PhoneNumberField
 from django.utils.translation import gettext_lazy as _
 
 # Create your models here.

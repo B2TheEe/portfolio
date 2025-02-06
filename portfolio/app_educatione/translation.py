@@ -3,4 +3,4 @@ from .models import EducationExperience
 
 @register(EducationExperience)
 class EducationExperienceTranslationOptions(TranslationOptions):
-    fields = ('description',)
+    fields = ('name','description',)

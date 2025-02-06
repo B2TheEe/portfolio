@@ -12,3 +12,6 @@ class WorkExperience(models.Model):
     description = models.TextField(max_length=1000)
     from_date = models.DateField()
     to_date = models.DateField()
+
+    def __str__(self):
+        return self.name + "\t" + self.company
