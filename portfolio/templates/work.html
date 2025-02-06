@@ -6,7 +6,7 @@
 {% for x in workexperiences %}
     <section>
         <section>
-            <img src="{{ x.photo }}">
+            <img src="{{ x.photo.url }}">
         </section>
         <section>
             <h2>{% trans x.name noop %}</h2>

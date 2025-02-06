@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import WorkExperience
 # Create your views here.
 def get_all_workexperience(request):
-    workexperiences = WorkExperience.objects.all().order_by("from_date")
+    workexperiences = WorkExperience.objects.all().order_by("from_date").reverse()
     context = {
         "workexperiences": workexperiences,
     }
