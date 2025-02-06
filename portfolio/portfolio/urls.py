@@ -28,7 +28,7 @@ from django.urls import path, include
 from django.utils.translation import gettext_lazy as _
 
 urlpatterns = i18n_patterns(
-    path(_('admin/'), admin.site.urls),
+    path('admin/', admin.site.urls),
     path('rosetta/', include('rosetta.urls')),
     path('', include(('app_aboutMe.urls', 'app_aboutMe'), namespace='app_aboutMe')),
     path('work', include(('app_worke.urls', 'work'), namespace='app_worke')),
@@ -36,33 +36,3 @@ urlpatterns = i18n_patterns(
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-""" 
-urlpatterns = [
-    path(_('admin/', admin.site.urls)),
-    path('', include(('app_aboutMe.urls', 'app_aboutMe'), namespace='app_aboutMe')),
-    #path("", include("app_aboutMe.urls")),
-    #path("work", include("app_worke.urls", 'work'),namespace="work"),
-    path('work', include(('app_worke.urls', 'work'), namespace='app_worke')),
-    #path("education", include("app_educatione.urls")),
-    #path("education", include(('"app_educatione.urls', 'education'), namespace='"app_educatione')),
-    path('education', include(('app_educatione.urls', 'education'), namespace='app_educatione')),
-    path('i18n/', include('django.conf.urls.i18n')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-i18n_patterns = [
-    path('rosetta/', include('rosetta.urls')),
-   # path("nl/overmij", include('app_aboutMe.urls',namespace='app_aboutMe')),
-    #path('nl/vaardigheden', include('app_skills.urls', namespace='app_skills')),
-    path('nl/werk', include('app_worke.urls')),
-    #path('nl/portfolio', include('portfolio.urls', namespace='portfolio')),
-   # path('nl/admin', admin.site.urls),
-]
-urlpatterns += i18n_patterns
-#
-#if settings.DEBUG:
-#    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-"""
