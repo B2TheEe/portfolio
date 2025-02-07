@@ -9,19 +9,6 @@
 </head>
 <body>
 <header>
-    <nav>
-        <ul>
-            <li>
-                  <a href="{% url 'app_aboutMe:index' %}">{% trans Home %}</a>
-            </li>
-              <li>
-                  <a href="{% url 'app_worke:index'%}"> {% trans Workexperience %}</a>
-              </li>
-                <li>
-                     <a href="{% url 'app_educatione:index' %}">{% trans Education %}</a>
-                </li>
-            </ul>
-    </nav>
       {% get_current_language as CURRENT_LANGUAGE %}
       {% get_available_languages as AVAILABLE_LANGUAGES %}
       {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
@@ -39,4 +26,17 @@
         </ul>
     {% get_current_language as LANGUAGE_CODE %}
     LANGUAGE_CODE: {{ LANGUAGE_CODE }}
+          <nav>
+        <ul>
+            <li>
+                  <a href="{% url 'app_aboutMe:index' %}">{% trans "Home" noop %}</a>
+            </li>
+              <li>
+                  <a href="{% url 'app_worke:index'%}"> {% trans "Workexperience" noop %}</a>
+              </li>
+                <li>
+                     <a href="{% url 'app_educatione:index' %}">{% trans "Education" noop %}</a>
+                </li>
+            </ul>
+    </nav>
 </header>
