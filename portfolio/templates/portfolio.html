@@ -3,19 +3,12 @@
 {% load i18n %}
 <body>
 <section id="worke">
-{% for x in portfolioitemss %}
-    <section>
-        <section>
-            <a href="">
-                <img src="{{ x.photo.url }}">
-            </a>
-        </section>
-    </section>>
-
-
+<h1>{% trans "Portfolio" noop %}</h1>
+{% for x in portfolioitems %}
+<section>
+    <a href="{{x.url}}">
+         <img src="{{ x.photo.url }}" width="250px" height="250px">
+    </a>
+</section>
 {% endfor %}
-
-
-    </section>
 </body>
-</html>
