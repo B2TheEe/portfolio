@@ -33,6 +33,7 @@ urlpatterns = i18n_patterns(
     path('', include(('app_aboutMe.urls', 'app_aboutMe'), namespace='app_aboutMe')),
     path('work', include(('app_worke.urls', 'work'), namespace='app_worke')),
     path('education', include(('app_educatione.urls', 'education'), namespace='app_educatione')),
+    path('portfolio', include(('app_portfolio.urls', 'portfolio'), namespace='app_portfolio')),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
