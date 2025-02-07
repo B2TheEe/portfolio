@@ -6,4 +6,4 @@ def get_all_portfolio_items(request):
     context = {
         "portfolioitems": portfolioitems,
     }
-    return render(request,template_name="education.html",context=context)
+    return render(request,template_name="portfolio.html",context=context)
