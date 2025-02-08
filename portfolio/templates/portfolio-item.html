@@ -1,0 +1,15 @@
+{% include "header.html" %}
+{% load static %}
+{% load i18n %}
+<body>
+<section id="worke">
+<h1>{% trans "Portfolio" noop %}</h1>
+<section>
+    <h2>{{ portfolioitem.name }}</h2>
+    <a href="{% url 'portfolio:portfolio-item' pk=portfolioitem.pk %}">
+         <img src="{{ portfolioitem.photo.url }}" width="250px" height="250px">
+    </a>
+    <p> {{ portfolioitem.description }}</p>
+     <a href="{{  portfolioitem.gitHubUrl  }}"><img src="{% static 'img/github.png' %}" width="50px" height="50px"></a>
+</section>
+</body>

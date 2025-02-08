@@ -1,10 +1,12 @@
 {% include "header.html" %}
 {% load static %}
+{% load i18n %}
 <body>
+<section id="worke">
 <h1>{% trans "Portfolio" noop %}</h1>
 {% for x in portfolioitems %}
 <section>
-    <a href="{{x.url}}">
+    <a href="{% url 'portfolio:portfolio-item' pk=x.pk %}">
          <img src="{{ x.photo.url }}" width="250px" height="250px">
     </a>
 </section>
