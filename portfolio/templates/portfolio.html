@@ -4,8 +4,9 @@
 <body>
 <section id="worke">
 <h1>{% trans "Portfolio" noop %}</h1>
+    <div class="row">
 {% for x in portfolioitems %}
-<section>
+<section class="col">
     <a href="{% url 'app_portfolio:portfolio-item' pk=x.pk %}">
          <img src="{{ x.photo.url }}" width="250px" height="250px">
     </a>
