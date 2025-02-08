@@ -6,7 +6,7 @@
 <h1>{% trans "Portfolio" noop %}</h1>
 {% for x in portfolioitems %}
 <section>
-    <a href="{% url 'portfolio:portfolio-item' pk=x.pk %}">
+    <a href="{% url 'app_portfolio:portfolio-item' pk=x.pk %}">
          <img src="{{ x.photo.url }}" width="250px" height="250px">
     </a>
 </section>
