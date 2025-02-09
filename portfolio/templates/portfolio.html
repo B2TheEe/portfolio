@@ -4,12 +4,16 @@
 <body>
 <section id="worke">
 <h1>{% trans "Portfolio" noop %}</h1>
-    <div class="row">
 {% for x in portfolioitems %}
-<section class="col">
+        {% if forloop.first %}<div class="row">{% endif %}
+<section class="col-xs-4 col">
     <a href="{% url 'app_portfolio:portfolio-item' pk=x.pk %}">
          <img src="{{ x.photo.url }}" width="250px" height="250px">
     </a>
 </section>
+
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
 {% endfor %}
+         </div>
 </body>
