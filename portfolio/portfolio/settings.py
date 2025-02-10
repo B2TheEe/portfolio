@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rosetta',
+    'bootstrap5',
     "app_aboutMe",
     "app_worke",
     "app_educatione",
