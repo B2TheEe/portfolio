@@ -1,0 +1,18 @@
+{% include "header.html" %}
+{% load static %}
+{% load i18n %}
+<h1> {% trans "Skills" noop %}</h1>
+{% for c in categories %}
+
+<h2>{{c.name}} </h2>
+{% for s in skills %}
+<ul>
+{% if c.pk == s.category.pk %}
+<li> {{ s.skill }}{{ s.rating }}</li>
+    {% if s.rating == 1 %}
+
+{% endif %}
+</ul>
+{% endfor %}
+{% endfor %}
+
