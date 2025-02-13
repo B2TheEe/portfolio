@@ -1,0 +1,35 @@
+{% include "header.html" %}
+{% load static %}
+{% load i18n %}
+<h1> {% trans "Skills" noop %}</h1>
+{% for c in categories %}
+
+<h2>{{c.name}} </h2>
+{% for s in skills %}
+<ul>
+{% if c.pk == s.category.pk%}
+<li> {{ s.skill }}</li>
+    {% if skill.pk == s.pk %}
+    <p>{{ skill.description }} </p>
+    {% endif %}
+    {% if s.rating == 1 %}
+     <img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px">
+     {% endif %}
+       {% if s.rating == 2 %}
+         <img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px">
+     {% endif %}
+       {% if s.rating == 3%}
+         <img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px">
+     {% endif%}
+       {% if s.rating == 4 %}
+               <img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px">
+     {% endif %}
+       {% if s.rating == 5%}
+                     <img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px">
+     {% endif %}
+
+    {% endif %}
+{% endif %}
+</ul>
+{% endfor %}
+{% endfor %}
