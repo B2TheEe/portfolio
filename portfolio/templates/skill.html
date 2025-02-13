@@ -8,7 +8,8 @@
 {% for s in skills %}
 <ul>
 {% if c.pk == s.category.pk %}
-<li> <a href="{% url 'app_skills:skill' pk=s.pk %}"> {{ s.skill }} </a></li>
+<li> {{ s.skill }}</li>
+    <p>{{ skill.description }} </p>
     {% if s.rating == 1 %}
      <img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px"><img src="{% static 'img/black-star-silhouette.png' %}" width="10px" height="10px">
      {% endif %}
@@ -24,8 +25,9 @@
        {% if s.rating == 5%}
                      <img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px"><img src="{% static 'img/star.png' %}" width="10px" height="10px">
      {% endif %}
+
+    {% endif %}
 {% endif %}
 </ul>
 {% endfor %}
 {% endfor %}
-

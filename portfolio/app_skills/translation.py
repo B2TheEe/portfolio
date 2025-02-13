@@ -7,4 +7,4 @@ class CategoryTranslationOptions(TranslationOptions):
 
 @register(Skill)
 class SkillTranslationOptions(TranslationOptions):
-    fields = ( 'skill' ,)
+    fields = ( 'skill' , 'description')

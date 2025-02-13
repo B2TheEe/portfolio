@@ -18,6 +18,7 @@ class Skill(models.Model):
     )
     skill = models.CharField(max_length=100)
     rating = models.IntegerField(choices=Rating_CHOICES, default=1)
+    description = models.TextField(max_length=1000,default="")
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
