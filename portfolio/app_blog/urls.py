@@ -5,4 +5,5 @@ app_name = "app_blog"
 
 urlpatterns = [
     path("", views.get_all_blogs, name="index"),
+    path("<pk>", views.get_blog, name="blog")
 ]

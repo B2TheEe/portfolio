@@ -3,3 +3,34 @@
 {% load i18n %}
 <body>
 <h1> {% trans "Blogs" noop %}</h1>
+{% for b in blogs %}
+ {% if forloop.first %}<div class="row">{% endif %}
+<section class="col-xs-4 col">
+    <a href="{% url 'app_blog:blog' pk=b.pk %}">
+         <img src="{{ b.picture.url }}" width="250px" height="250px">
+    </a>
+    <h1> {{ b.title }}</h1>
+    <p> {{ b.summary  }}</p>  <a href="{% url 'app_blog:blog' pk=b.pk %}"> {% trans "Read more" noop %} </a>
+</section>
+
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+{% endfor %}
+         </div>
+    <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>

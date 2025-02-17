@@ -9,15 +9,23 @@ class Author(models.Model):
 class Tag(models.Model):
     tag = models.CharField(max_length=100)
 
+
+
 class BlogArticle(models.Model):
+    STATUS = (
+        (0, "Draft"),
+        (1, "Publish")
+    )
+
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     picture = models.ImageField(upload_to='media/')
-    text = models.TextField(max_length=1500)
+    summary = models.TextField(max_length=150,default="")
+    text = models.TextField(max_length=15000)
     date_published = models.DateTimeField()
     date_modified = models.DateTimeField()
     tags = models.ManyToManyField(Tag)
-
+    status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
         return  self.title
