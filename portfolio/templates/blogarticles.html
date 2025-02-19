@@ -3,6 +3,11 @@
 {% load i18n %}
 <body>
 <h1> {% trans "Blogs" noop %}</h1>
+<p> {% trans "filter" noop %}
+    {% for t in tags %}
+    <a href="{% url 'app_blog:tag' tag=t.tag %}"> {{ t }}</a>
+    {% endfor %}
+</p>
 {% for b in blogs %}
  {% if forloop.first %}<div class="row">{% endif %}
 <section class="col-xs-4 col">
@@ -11,6 +16,7 @@
     </a>
     <h1> {{ b.title }}</h1>
     <p> {{ b.summary  }}</p>  <a href="{% url 'app_blog:blog' pk=b.pk %}"> {% trans "Read more" noop %} </a>
+    <p> {% for t in  b.tags.all %} {{ t }}{% endfor %}</p>
 </section>
 
     {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
