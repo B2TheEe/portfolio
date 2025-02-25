@@ -40,11 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rosetta',
     'bootstrap5',
+    'taggit',
+    'django_extensions',
     "app_aboutMe",
     "app_worke",
     "app_educatione",
     "app_portfolio",
     "app_skills",
+    "app_blog",
 
 ]
 

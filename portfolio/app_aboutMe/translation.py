@@ -3,5 +3,5 @@ from modeltranslation.translator import register, TranslationOptions
 from .models import AboutMe
 
 @register(AboutMe)
-class AboutMeranslationOptions(TranslationOptions):
+class AboutMeTranslationOptions(TranslationOptions):
     fields = ( 'about_me',)
