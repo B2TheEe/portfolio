@@ -11,5 +11,5 @@
 <p> {{ blog.text }}</p>
 
 {% for tag in  blog.tags.all %}
-{{ tag }}
+ <a href="{% url 'app_blog:get-tag' tag=t %}">{{ tag }}</a>{
 {% endfor %}

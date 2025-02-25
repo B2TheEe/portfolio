@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rosetta',
     'bootstrap5',
     'taggit',
+    'django_extensions',
     "app_aboutMe",
     "app_worke",
     "app_educatione",
