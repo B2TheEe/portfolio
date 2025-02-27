@@ -10,7 +10,7 @@ class EducationExperience(models.Model):
     description = models.TextField(max_length=1000)
     from_date = models.DateField()
     to_date = models.DateField()
-    Propaedeutic_exam_date = models.DateField(default=None,blank=True,null=True )
+    propaedeutic_exam_date = models.DateField(default=None,blank=True,null=True )
     degree_date = models.DateField(default=None,blank=True,null=True )
 
     def __str__(self):

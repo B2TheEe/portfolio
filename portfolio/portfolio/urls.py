@@ -30,6 +30,7 @@ from django.utils.translation import gettext_lazy as _
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('rosetta/', include('rosetta.urls')),
+     path('search/', include('haystack.urls')),
     path('', include(('app_aboutMe.urls', 'app_aboutMe'), namespace='app_aboutMe')),
     path('work', include(('app_worke.urls', 'work'), namespace='app_worke')),
     path('education', include(('app_educatione.urls', 'education'), namespace='app_educatione')),
