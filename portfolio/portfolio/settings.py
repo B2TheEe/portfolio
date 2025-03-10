@@ -169,8 +169,24 @@ HAYSTACK_CONNECTIONS = {
         'INDEX_NAME': 'haystack_books',
     },
 }
+
+"""
+HAYSTACK_CONNECTIONS = {}
+for lang_code, lang_name in LANGUAGES:
+ lang_code_underscored = lang_code.replace("-", "_")
+ HAYSTACK_CONNECTIONS[f"default_{lang_code_underscored}"] = {
+ "ENGINE": "portfolio.apps.app_search.multilingual_whoosh_backend .MultilingualWhooshEngine",
+ "PATH": os.path.join(BASE_DIR, "tmp",
+  f"whoosh_index_{lang_code_underscored}"),
+ }
+ lang_code_underscored = lang_code.replace("-", "_")
+ HAYSTACK_CONNECTIONS["default"] = HAYSTACK_CONNECTIONS[
+ f"default_{lang_code_underscored}"
+]
 PROJECT_ROOT      = os.path.dirname(__file__)
 HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
+ """
 
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
