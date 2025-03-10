@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-07 09:56+0100\n"
+"POT-Creation-Date: 2025-03-10 11:36+0100\n"
 "PO-Revision-Date: 2025-02-05 19:51+0000\n"
 "Last-Translator:   <schopmanbenteb2theee@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,21 +23,70 @@ msgstr ""
 msgid "About me"
 msgstr "Over mij"
 
-#: templates/header.html:16
+#: templates/blogarticle.html:8
+msgid "Author"
+msgstr ""
+
+#: templates/blogarticle.html:9
+msgid "Date published"
+msgstr ""
+
+#: templates/blogarticle.html:10
+msgid "Date modified"
+msgstr ""
+
+#: templates/blogarticles-tag.html:5 templates/blogarticles.html:5
+msgid "Blogs"
+msgstr ""
+
+#: templates/blogarticles-tag.html:16 templates/blogarticles.html:19
+msgid "Read more"
+msgstr ""
+
+#: templates/blogarticles.html:6
+msgid "filter"
+msgstr ""
+
+#: templates/header.html:20
 msgid "Language"
 msgstr "Taal"
 
-#: templates/header.html:32
+#: templates/header.html:37
 msgid "Home"
 msgstr "Home"
 
-#: templates/header.html:35
+#: templates/header.html:40
 msgid "Workexperience"
 msgstr "Werkervaring"
 
-#: templates/header.html:38
+#: templates/header.html:43
 msgid "Education"
 msgstr "Onderwijs"
+
+#: templates/header.html:46 templates/portfolio-item.html:6
+#: templates/portfolio.html:6
+msgid "Portfolio"
+msgstr "Portfolio"
+
+#: templates/header.html:49 templates/skill.html:4 templates/skills.html:4
+msgid "Skills"
+msgstr "Vaardigheden"
+
+#: templates/header.html:52
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/search/search.html:10
+msgid "Search"
+msgstr "Zoek"
+
+#: templates/search/search.html:16
+msgid "Search Results"
+msgstr "Zoekresultaten"
+
+#: templates/search/search.html:38
+msgid "No results found."
+msgstr "Geen resultaten gevonden"
 
 #: venv/lib/python3.12/site-packages/django/contrib/messages/apps.py:16
 msgid "Messages"
