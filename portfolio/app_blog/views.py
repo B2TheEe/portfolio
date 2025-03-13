@@ -43,7 +43,3 @@ def get_tag(request,tag):
     }
     return render(request,template_name="blogarticles-tag.html", context=context)
 
-def search(request):
-    blogs_list = BlogArticle.objects.all()
-    blogs_filter = BlogArticleFilter(request.GET, queryset=blogs_list)
-    return render(request, 'search/user_list.html', {'filter': blogs_filter})

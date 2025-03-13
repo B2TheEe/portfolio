@@ -4,12 +4,7 @@
 <body>
 <section id="worke">
 <h1>{% trans "Portfolio" noop %}</h1>
-    <p> {% trans "filter" noop %}
-    {% for t in tags %}
-    <a href="{% url 'app_portfolio:get-tag' tag=t %}">{{ t }}</a>
-
-    {% endfor %}
-</p>
+    <h2> Tag: {{ tag }} {{  portfolioitem_list|length }}</h2>
 {% for x in portfolioitem_list %}
         {% if forloop.first %}<div class="row">{% endif %}
 <section class="col-xs-4 col">
