@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from django.views.generic import ListView
+from haystack.query import SearchQuerySet
 
 from .models import PortfolioItem
 # Create your views here.

@@ -1,0 +1,42 @@
+{% include "header.html" %}
+{% load i18n %}
+{% load static %}
+
+    <form method="get" action="{{ request.path }}">
+        <div class="well clearfix">
+            {{ form.as_p }}
+            <p class="pull-right">
+                <button type="submit" class="btn btn-primary">
+                 {% trans "Search" %}</button>
+            </p>
+        </div>
+    </form>
+
+    {% if query %}
+        <h1>{% trans "Search Results" %}</h1>
+
+        {% for result in page.object_list %}
+
+            {% with idea=result.object %}
+             <!--
+                <a href="{{ idea.get_url_path }}"
+                 class="d-block my-3">
+                    <div class="card">
+                      <img src="{{ idea.picture_thumbnail.url }}"
+                       alt="" />
+                      <div class="card-body">
+                        <p class="card-text">
+                         {{ idea.translated_title }}</p>
+                      </div>
+                    </div>
+                </a>
+                -->
+                <a href="{{ idea.url }}"> {{ idea }}</a>
+
+            {% endwith %}
+        {% empty %}
+            <p>{% trans "No results found." %}</p>
+        {% endfor %}
+
+
+    {% endif %}

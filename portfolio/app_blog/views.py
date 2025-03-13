@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import BlogArticle
 from taggit.models import Tag
+from .search_indexes import BlogArticleIndex
 
 # Create your views here.
 def get_all_blogs(request):
@@ -18,6 +19,7 @@ def get_all_blogs(request):
         "page_obj": page_obj,
     }
     return render(request,"blogarticles.html",context=context)
+
 
 def get_blog(request, pk):
     blogarticle = BlogArticle.objects.get(pk=pk)
@@ -40,3 +42,8 @@ def get_tag(request,tag):
         "blogs": blogs,
     }
     return render(request,template_name="blogarticles-tag.html", context=context)
+
+def search(request):
+    blogs_list = BlogArticle.objects.all()
+    blogs_filter = BlogArticleFilter(request.GET, queryset=blogs_list)
+    return render(request, 'search/user_list.html', {'filter': blogs_filter})
