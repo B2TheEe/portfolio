@@ -31,7 +31,7 @@ urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     path('rosetta/', include('rosetta.urls')),
     path("search/", include("haystack.urls")),
-    path('', include(('app_aboutMe.urls', 'app_aboutMe'), namespace='app_aboutMe')),
+    path('', include('app_landingpage.urls', namespace='app_landingpage')),
     path('work', include(('app_worke.urls', 'work'), namespace='app_worke')),
     path('education', include(('app_educatione.urls', 'education'), namespace='app_educatione')),
     path('portfolio', include(('app_portfolio.urls', 'portfolio'), namespace='app_portfolio')),
