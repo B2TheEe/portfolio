@@ -1,0 +1,44 @@
+{% include "header.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<div class="row" id="landingpage_row">
+
+    <aside id="me_info" class="col-6 col-sm-6 col-xs-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <img src="{{landingpage.picture.image.url }}" class="img-thumbnail" id="picture-of-me" width="300" height="300"
+             alt="{{ landingpage.picture.caption }}">
+        <!--
+        <div id="external-links">
+            <div class="col-1 col-sm-1 col-xs-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1" id="Github-logo-img">
+                <a href="{{ landingpage.gitHub_url }}">
+                    <img src="{% static 'img/github.png' %}" alt="View my projects on Github" height="30px" width="30px">
+                </a>
+            </div>
+            <div class="col-1 col-sm-1 col-xs-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1" id="Linkedin-logo-img"
+                <a href="{{ landingpage.linkedin_url }}"><img
+                        src="{% static 'img/linkedin.png' %}"
+                        alt="View my experience on LinkedIn" height="30px" width="30px"></a>
+            </div>
+        </div>
+        -->
+             <a href="tel:{{ landingpage.phone_number }}"> <img src="{% static '/img/phone.png' %}" width="50px" height="50px"></a>
+            <a href= "mailto:{{ landingpage.email }}"> <img src="{% static  'img/email.png' %}" width="50px" height="50px"> </a>
+            <a href="{{  landingpage.github_url  }}"><img src="{% static 'img/github.png' %}" width="50px" height="50px"></a>
+            <a href="{{ landingpage.linkedIn_url }}"><img src="{% static 'img/linkedin.png' %}" width="50px" height="50px"></a>
+    </aside>
+    <main id="landingpage_content">
+        <h1 id="landingspage-title"> {{ landingpage.title }} </h1>
+        <h2 id="landingspage-subtitle"> {{ landingpage.subtitle }}</h2>
+        <p id="landingspage-about">{{ landingpage.about}}</p>
+        <article id="actions">
+            <a href="mailto:{{  landingpage.email }}" class="mustard"> {% trans "Contact me!" noop%}</a> {% trans "or" noop %}
+             <a href="{% url 'app_landingspage:cv' %}"  class="mustard" download> {% trans "Download my CV!" %}</a> {% trans "or" %}
+            <a href="{% url 'app_portfolio:index' %}" class="mustard">{% trans "Learn more about me!" noop %}</a>
+
+
+
+        </article>
+    </main>
+</div>
+{% endblock %}
