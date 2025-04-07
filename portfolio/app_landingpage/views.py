@@ -3,7 +3,7 @@ import os
 from django.conf import settings
 from django.http import Http404, HttpResponse
 from django.shortcuts import render
-
+from django.http import FileResponse
 from .models import LandingPage
 
 # Create your views here.
@@ -15,11 +15,6 @@ def index(request):
     except LandingPage.DoesNotExist:
         raise Http404("No Landingpage matches the given query.")
 
-def download(request, path):
-    file_path = os.path.join(settings.MEDIA_ROOT, path)
-    if os.path.exists(file_path):
-        with open(file_path, 'rb') as fh:
-            response = HttpResponse(fh.read(), content_type="application/vnd.ms-excel")
-            response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
-            return response
-    raise Http404
+
+def download_cv(reauest):
+        return FileResponse(open('media/documents/CV_BenteSchopman_EN_v0125_GSkfl1A.pdf', 'rb'), as_attachment=True, content_type='application/pdf')

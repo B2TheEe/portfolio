@@ -7,8 +7,7 @@ app_name = 'app_landingspage'
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('download', views.download, name="download")
-
+    path('cv', views.download_cv, name="cv"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
