@@ -8,13 +8,12 @@
             <img src="{{ x.photo.url }}">
         </section>
         <section>
-            <h2>{{ x.name }}</h2>
+            <h2>{{ x.name }} {{ x.company }}</h2>
 
             <h4>{{ x.from_date }} - {{ x.to_date }}</h4>
-            <h2> {{ x.company }}</h2>
-             <h3>{{ x.description }}</h3>
-        {% if x.Propaedeutic_exam_date is not null%}
-            <h3>Propaedeutic_exam:  {{ x.Propaedeutic_exam_date }}</h3>
+             <p>{{ x.description }}</p>
+        {% if x.propaedeutic_exam_date is not null%}
+            <h3>Propaedeutic exam: {{ x.propaedeutic_exam_date }}</h3>
             {% endif %}
             {% if x.degree_date  is not null %}
 

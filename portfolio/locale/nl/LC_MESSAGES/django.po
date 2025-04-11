@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-10 11:36+0100\n"
+"POT-Creation-Date: 2025-04-10 11:00+0200\n"
 "PO-Revision-Date: 2025-02-05 19:51+0000\n"
 "Last-Translator:   <schopmanbenteb2theee@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: templates/blogarticles.html:6
+#: templates/blogarticles.html:6 templates/portfolio.html:7
 msgid "filter"
 msgstr ""
 
@@ -64,7 +64,7 @@ msgid "Education"
 msgstr "Onderwijs"
 
 #: templates/header.html:46 templates/portfolio-item.html:6
-#: templates/portfolio.html:6
+#: templates/portfolio-tag.html:6 templates/portfolio.html:6
 msgid "Portfolio"
 msgstr "Portfolio"
 
@@ -75,6 +75,23 @@ msgstr "Vaardigheden"
 #: templates/header.html:52
 msgid "Blog"
 msgstr "Blog"
+
+#: templates/index.html:35
+msgid "Contact me!"
+msgstr "Neem contact op "
+
+#: templates/index.html:35 templates/index.html:36
+#: venv/lib/python3.12/site-packages/django/utils/text.py:286
+msgid "or"
+msgstr "of"
+
+#: templates/index.html:36
+msgid "Download my CV!"
+msgstr "Download mijn CV!"
+
+#: templates/index.html:37
+msgid "Learn more about me!"
+msgstr "leer meer over miu"
 
 #: templates/search/search.html:10
 msgid "Search"
@@ -1089,10 +1106,6 @@ msgstr ""
 #, python-format
 msgctxt "String to return when truncating text"
 msgid "%(truncated_text)s…"
-msgstr ""
-
-#: venv/lib/python3.12/site-packages/django/utils/text.py:286
-msgid "or"
 msgstr ""
 
 #. Translators: This string is used as a separator between list elements
