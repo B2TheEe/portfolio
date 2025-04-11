@@ -4,6 +4,7 @@
 
     <form method="get" action="{{ request.path }}">
         <div class="well clearfix">
+            {% csrf_token %}
             {{ form.as_p }}
             <p class="pull-right">
                 <button type="submit" class="btn btn-primary">

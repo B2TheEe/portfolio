@@ -2,11 +2,14 @@ from django.db.models import Count
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.views.decorators.csrf import csrf_protect
+
 from .models import BlogArticle
 from taggit.models import Tag
 from .search_indexes import BlogArticleIndex
 
 # Create your views here.
+@csrf_protect
 def get_all_blogs(request):
     blogs = BlogArticle.objects.filter(status=1)
     tags = Tag.objects.filter(blogarticle__in=blogs)
@@ -20,7 +23,7 @@ def get_all_blogs(request):
     }
     return render(request,"blogarticles.html",context=context)
 
-
+@csrf_protect
 def get_blog(request, pk):
     blogarticle = BlogArticle.objects.get(pk=pk)
     context = {
@@ -28,7 +31,7 @@ def get_blog(request, pk):
     }
     return render(request,template_name="blogarticle.html", context=context)
 
-
+@csrf_protect
 def get_tag(request,tag):
     print(tag)
 
