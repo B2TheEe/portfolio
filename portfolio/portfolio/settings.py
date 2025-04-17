@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
-
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x&1h0agu)+s0ewu)_urg=8%7)#8z$1aq8=ummymdm^qn+&+$_w'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 STATIC_ROOT = 'staticfiles'
 
 # Application definition
@@ -170,23 +171,19 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-"""
-HAYSTACK_CONNECTIONS = {}
-for lang_code, lang_name in LANGUAGES:
- lang_code_underscored = lang_code.replace("-", "_")
- HAYSTACK_CONNECTIONS[f"default_{lang_code_underscored}"] = {
- "ENGINE": "portfolio.apps.app_search.multilingual_whoosh_backend .MultilingualWhooshEngine",
- "PATH": os.path.join(BASE_DIR, "tmp",
-  f"whoosh_index_{lang_code_underscored}"),
- }
- lang_code_underscored = lang_code.replace("-", "_")
- HAYSTACK_CONNECTIONS["default"] = HAYSTACK_CONNECTIONS[
- f"default_{lang_code_underscored}"
-]
-PROJECT_ROOT      = os.path.dirname(__file__)
-HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
- """
 
 
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
+#security
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+SECURE_HSTS_SECONDS = 86400
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+SECURE_SSL_REDIRECT = True

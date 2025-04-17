@@ -53,8 +53,9 @@
              </li>
              <li>
                    <form action="/search " method="get">
+                       {% csrf_token %}
         <input name="q" type="text" />
-        <input type="submit" />
+        <input type="submit" value="Search" />
     </form>
              </li>
             </ul>

@@ -1,12 +1,13 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_protect
 from django.views.generic import ListView
 from haystack.query import SearchQuerySet
 from taggit.models import Tag
 
 from .models import PortfolioItem
 # Create your views here.
-
+@csrf_protect
 def get_all_portfolio_items(request):
     portfolioitem_list = PortfolioItem.objects.all()
     tags = Tag.objects.filter(portfolioitem__in=portfolioitem_list).distinct()
@@ -20,6 +21,7 @@ def get_all_portfolio_items(request):
     }
     return render(request,template_name="portfolio.html",context=context)
 
+@csrf_protect
 def get_portfolio_item(request, pk):
     portfolio_item = PortfolioItem.objects.get(pk=pk)
     context = {
@@ -27,6 +29,7 @@ def get_portfolio_item(request, pk):
     }
     return render(request,template_name="portfolio-item.html", context=context)
 
+@csrf_protect
 def get_tag(request,tag):
     tag_pk = Tag.objects.get_by_natural_key(tag)
     portfolioitem_list = PortfolioItem.objects.filter(tags=tag_pk)

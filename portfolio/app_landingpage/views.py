@@ -5,10 +5,12 @@ from django.http import Http404, HttpResponse
 from django.shortcuts import render
 from django.http import FileResponse
 from django.conf import settings
+from django.views.decorators.csrf import csrf_protect
+
 from .models import LandingPage
 
 # Create your views here.
-
+@csrf_protect
 def index(request):
     try:
         lp = LandingPage.objects.get(pk=1)
@@ -16,7 +18,7 @@ def index(request):
     except LandingPage.DoesNotExist:
         raise Http404("No Landingpage matches the given query.")
 
-
+@csrf_protect
 def download_cv(request):
     lang = settings.LANGUAGE_CODE
 
