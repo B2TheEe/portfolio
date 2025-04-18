@@ -13,3 +13,52 @@
 .mustard{
      background-color:#FCDF54;
 }
+
+
+/* Home */
+main#landingpage_content {
+
+    float: right;
+    width: 500px;
+
+}
+
+/* Work */
+section.work {
+    float: left;
+    width: 500px;
+    height: 600px;
+    margin: 25px;
+
+}
+
+
+section.photo{
+    float: left;
+    margin: 10px;
+    padding: 5px;
+}
+
+section.descripion {
+    float; right;
+    margin: 10px;
+    padding: 10px;
+    height: 250px;
+    width: 300px;
+}
+
+h2.dates {
+    float: left;
+    height: 10px;
+}
+p.des {
+    float: left;
+    width: 750x;
+    height: 350px;
+
+}
+
+.pagination {
+align-items: center;
+justify-content: center;
+}

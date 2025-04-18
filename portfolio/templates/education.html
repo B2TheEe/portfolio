@@ -4,20 +4,20 @@
 <section id="worke">
 {% for x in educationexperiences %}
     <section>
-        <section>
+        <section class="photo">
             <img src="{{ x.photo.url }}">
         </section>
-        <section>
-            <h2>{{ x.name }} {{ x.company }}</h2>
+        <section class="description">
+            <h2>{{ x.name }} @ {{ x.company }}</h2>
 
-            <h4>{{ x.from_date }} - {{ x.to_date }}</h4>
+            <b>{{ x.from_date }} - {{ x.to_date }}</b>
              <p>{{ x.description }}</p>
         {% if x.propaedeutic_exam_date is not null%}
-            <h3>Propaedeutic exam: {{ x.propaedeutic_exam_date }}</h3>
+            <b>Propaedeutic exam: {{ x.propaedeutic_exam_date }}</b>
             {% endif %}
             {% if x.degree_date  is not null %}
 
-            <h3> Degree: {{ x.degree_date }} </h3>
+            <b> Degree: {{ x.degree_date }} </b>
             {% endif %}
         
         </section>

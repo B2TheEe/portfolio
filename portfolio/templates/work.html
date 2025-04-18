@@ -4,16 +4,14 @@
 <body>
 <section id="worke">
 {% for x in workexperiences %}
-    <section>
-        <section>
+    <section class="work">
+        <section class="photo">
             <img src="{{ x.photo.url }}">
         </section>
-        <section>
-            <h2>{% trans x.name noop %}</h2>
-             <h4> {{ x.from_date }} - {{ x.to_date }}</h4>
-
-            <h2>{% trans x.company noop %}</h2>
-             <h3>{% trans x.description noop%}</h3>
+        <section class="descripion">
+            <h2>{% trans x.name noop %} @ {% trans x.company noop %} </h2>
+             <b> {{ x.from_date }} - {{ x.to_date }}</b>
+             <p class="des">{% trans x.description noop%}</p>
             </section>
         
         </section>
